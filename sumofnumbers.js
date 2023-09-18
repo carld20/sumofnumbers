@@ -1,4 +1,4 @@
-function forLoopSum(array) {
+function sumFor(array) {
   let sum = 0;
 
   for (let i = 0; i < array.length; i++) {
@@ -7,7 +7,7 @@ function forLoopSum(array) {
 
   return sum;
 }
-function whileLoopSum(array) {
+function sumWhile(array) {
   let sum = 0;
   let index = 0;
 
@@ -19,19 +19,19 @@ function whileLoopSum(array) {
   return sum;
 }
 
-function recursionSum(array, index) {
+function sumRecursion(array, index) {
   if (index === 0) {
     return array[index];
-  } return array[index] + recursionSum(array, index - 1);
+  } return array[index] + sumRecursion(array, index - 1);
 }
 
-function underscorSum(array) {
+function sumTheSimpleWay(array) {
   return _.reduce(array, function (memo, num) { return memo + num; }, 0);
 }
 
 const array = [1, 2, 3, 4, 5];
 
-console.log(forLoopSum(array));
-console.log(whileLoopSum(array));
-console.log(recursionSum(array, array.length - 1));
-console.log(underscorSum(array));
+console.log(sumFor(array));
+console.log(sumWhile(array));
+console.log(sumRecursion(array, array.length - 1));
+console.log(sumTheSimpleWay(array));
